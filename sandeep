@@ -1,0 +1,12 @@
+*&---------------------------------------------------------------------*
+*& Report zprogram2
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT zprogram2.
+PARAMETERS : p_table type string .
+data : ref_tab type ref to data.
+       create data ref_tab type table of (p_table).
+
+assign REF_TAB->* to FIELD-SYMBOL(<fs>).
+BREAK-POINT.
