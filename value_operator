@@ -1,0 +1,17 @@
+*&---------------------------------------------------------------------*
+*& Report zdemo_program
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT zdemo_program.
+*creating internal table with value operator
+data : it_scarr type table of scarr.
+
+       it_scarr = value #( ( carrid = 'AN' carrname = 'sandeep' currcode = 'AUD' )
+                            ( carrid = 'AN' carrname = 'sandeep' currcode = 'AUD' ) ).
+
+       data(it_scarr2) = value #( base it_scarr
+       ( carrid = 'AN' carrname = 'sandeep' currcode = 'AUD' ) ).
+
+*creating work area with value operator.
+data(wa_scarr) = value scarr(  carrid = 'AN' carrname = 'sandeep' currcode = 'AUD'  ).
